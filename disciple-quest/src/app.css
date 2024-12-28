@@ -9,7 +9,7 @@
     --light-blue: #8ED5FA;
     --blue: #1C78C0;
     --dark-blue: #170C6A;
-    --red:#E31837;
+    --red: #E31837;
     --green: #0FB255;
 
     --correct-answer-check-1: #4FFFB0;
@@ -21,16 +21,16 @@
     --success: var(--green);
     --danger: var(--red);
 
-    --bg-blue-linear: radial-gradient( circle farthest-corner at 74.2% 50.9%,  rgba(14,72,222,1) 5.2%, rgba(3,22,65,1) 75.3% );
-    --bg-yellow-linear: radial-gradient( circle farthest-corner at 10% 20%,  rgba(249,151,63,1) 0%, rgba(249,210,45,1) 90% );
+    --bg-blue-linear: radial-gradient(circle farthest-corner at 74.2% 50.9%, rgba(14, 72, 222, 1) 5.2%, rgba(3, 22, 65, 1) 75.3%);
+    --bg-yellow-linear: radial-gradient(circle farthest-corner at 10% 20%, rgba(249, 151, 63, 1) 0%, rgba(249, 210, 45, 1) 90%);
     --bg-red-linear: linear-gradient(147deg, #e0455f 0%, #44000b 74%);
-    --bg-green-linear: linear-gradient( 75.9deg,  rgba(101,253,77,1) 7.9%, rgba(2,190,93,1) 97.7% );
+    --bg-green-linear: linear-gradient(75.9deg, rgba(101, 253, 77, 1) 7.9%, rgba(2, 190, 93, 1) 97.7%);
 
     --bg-mixed-sky-gray: linear-gradient(to right, #928DAB, #00d2ff);
     --bg-mixed-yellow-orange: linear-gradient(to right, #f12711, #f5af19);
 
-    --border-level-1 : 2px solid var(--white);
-    --border-level-2 : 4px solid var(--white);
+    --border-level-1: 2px solid var(--white);
+    --border-level-2: 4px solid var(--white);
 }
 
 .app {
@@ -42,13 +42,19 @@
 
 .main {
     width: 75%;
+    height: 100%;
     background:
         linear-gradient(rgba(237, 176, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('./assets/question-quiz-bg.png') center;
+        url('./assets/images/question-quiz-bg.png') center;
     background-size: cover;
     display: flex;
     flex-direction: column;
     color: var(--white);
+}
+
+.main-start {
+    width: 100%;
+    background: url('./assets/images/start-question-quiz-bg.png') center;
 }
 
 .top {
@@ -126,7 +132,7 @@
 
 /* answer check animations */
 .answer.correct {
-    animation: correct 1s ease forwards;
+    animation: correct 3s ease forwards;
 }
 
 @keyframes correct {
@@ -142,14 +148,15 @@
     60% {
         background: var(--coorect-answer-check-2);
     }
+
     62%,
-    100%{
+    100% {
         background: var(--success);
     }
 }
 
 .answer.wrong {
-    animation: wrong 1s ease forwards;
+    animation: wrong 3s ease forwards;
 }
 
 @keyframes wrong {
@@ -165,8 +172,9 @@
     60% {
         background: var(--wrong-answer-check-2);
     }
+
     62%,
-    100%{
+    100% {
         background: var(--danger);
     }
 }
@@ -207,11 +215,62 @@
     font-weight: 300;
 }
 
-.endText{
+.endText {
     position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
+}
+
+.start {
+    width: 280px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.startInput {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 8px;
+    text-align: start;
+    font-size: 14px;
+}
+
+.startInput:focus {
+    outline: none;
+}
+
+.startButton {
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    background: var(--bg-yellow-linear);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.startButton:hover {
+    background: var(--green);
 }
