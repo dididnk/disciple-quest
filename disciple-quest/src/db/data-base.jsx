@@ -60,5 +60,19 @@ function shuffleArray(array) {
   return array;
 }
 
+export const levels = [
+  { id: 1, content: "✟ Niveau 1" },
+  { id: 2, content: "✟ Niveau 2" },
+  { id: 3, content: "✟ Niveau 3" },
+  { id: 4, content: "✟ Niveau 4" },
+  { id: 5, content: "✟ Niveau 5" },
+  { id: 6, content: "✟ Niveau 6" },
+  { id: 7, content: "✟ Niveau 7" },
+  { id: 8, content: "✟ Niveau 8" },
+  { id: 9, content: "✟ Niveau 9" },
+  { id: 10, content: "✟ Niveau 10" },
+  { id: 11, content: "✟ Niveau 11" },
+  { id: 12, content: "✟ Niveau 12" },
+].reverse();
+
 export const randomQuizQuestions = shuffleArray([...quizQuestions]);
-// export const randomQuizQuestions = quizQuestions;

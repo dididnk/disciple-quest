@@ -1,44 +1,54 @@
 :root {
-    /* Primary Colors */
-    --gold-yellow: #FFBE0B;
-    /* Glowing light effect */
-    --sky-blue: #0047ab;
-    /* Soft heavenly sky */
-    --deep-blue: #1ca9c9;
-    /* Darker background contrast */
-    --bright-white: #FFFFFF;
-    /* Bright highlights */
+    --white: #fff;
+    --black: black;
 
-    /* Accent Colors */
-    --light-brown: #D2B48C;
-    /* Wooden table effect */
-    --soft-orange: #FFA07A;
-    /* Warm gradient tones */
-    --translucent-black: rgba(0, 0, 0, 0.6);
-    /* Subtle shadows */
+    --light-black: #646464;
+    --light-yellow: #FFE873;
+    --yellow: #FFD43B;
+    --yark-yellow: #EDB000;
+    --light-blue: #8ED5FA;
+    --blue: #1C78C0;
+    --dark-blue: #170C6A;
+    --red:#E31837;
+    --green: #0FB255;
 
-    /* Gradient for Background */
-    --background-gradient: linear-gradient(to bottom, var(--sky-blue), var(--deep-blue));
-    --background-gradient-second: linear-gradient(to top, var(--deep-blue), var(--sky-blue));
+    --correct-answer-check-1: #4FFFB0;
+    --correct-answer-check-2: #17B169;
+
+    --wrong-answer-check-1: #fd5c63;
+    --wrong-answer-check-2: #D30044;
+
+    --success: var(--green);
+    --danger: var(--red);
+
+    --bg-blue-linear: radial-gradient( circle farthest-corner at 74.2% 50.9%,  rgba(14,72,222,1) 5.2%, rgba(3,22,65,1) 75.3% );
+    --bg-yellow-linear: radial-gradient( circle farthest-corner at 10% 20%,  rgba(249,151,63,1) 0%, rgba(249,210,45,1) 90% );
+    --bg-red-linear: linear-gradient(147deg, #e0455f 0%, #44000b 74%);
+    --bg-green-linear: linear-gradient( 75.9deg,  rgba(101,253,77,1) 7.9%, rgba(2,190,93,1) 97.7% );
+
+    --bg-mixed-sky-gray: linear-gradient(to right, #928DAB, #00d2ff);
+    --bg-mixed-yellow-orange: linear-gradient(to right, #f12711, #f5af19);
+
+    --border-level-1 : 2px solid var(--white);
+    --border-level-2 : 4px solid var(--white);
 }
-
 
 .app {
     height: 100vh;
     display: flex;
-    background-color: var(--gold-yellow);
-    color: white;
+    background: var(--bg-mixed-yellow-orange);
+    color: var(--white);
 }
 
 .main {
     width: 75%;
     background:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        linear-gradient(rgba(237, 176, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('./assets/question-quiz-bg.png') center;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    color: var(--bright-white);
+    color: var(--white);
 }
 
 .top {
@@ -50,7 +60,7 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 5px solid white;
+    border: var(--border-level-2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +73,6 @@
 
 .bottom {
     height: 50%;
-
 }
 
 .trivia {
@@ -75,9 +84,10 @@
 }
 
 .question {
+    cursor: help;
     width: 80%;
-    background: var(--background-gradient);
-    border: 2px solid white;
+    background: var(--bg-yellow-linear);
+    border: var(--border-level-1);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -95,22 +105,28 @@
     cursor: pointer;
     width: 40%;
     padding: 10px;
-    background: var(--background-gradient-second);
-    border: 1px solid white;
+    background: var(--bg-mixed-yellow-orange);
+    border: var(--border-level-1);
     border-radius: 15px;
     font-size: 20px;
     font-weight: 300;
     margin: 0 10px 20px 10px;
 }
 
+.answers:hover :not(.answer:hover) {
+    opacity: 0.5;
+}
+
 .answer:hover,
 .answer.active {
-    background: midnightblue;
+    transform: scale(1.04);
+    background: var(--bg-yellow-linear);
+    font-weight: 500;
 }
 
 /* answer check animations */
 .answer.correct {
-    animation: correct 3s ease forwards;
+    animation: correct 1s ease forwards;
 }
 
 @keyframes correct {
@@ -118,23 +134,22 @@
     0%,
     22%,
     42% {
-        background: mediumaquamarine;
+        background: var(--coorect-answer-check-1);
     }
 
     20%,
     40%,
     60% {
-        background: var(--background-gradient);
-        background: lightgreen;
+        background: var(--coorect-answer-check-2);
     }
     62%,
     100%{
-        background: green;
+        background: var(--success);
     }
 }
 
 .answer.wrong {
-    animation: wrong 3s ease forwards;
+    animation: wrong 1s ease forwards;
 }
 
 @keyframes wrong {
@@ -142,18 +157,17 @@
     0%,
     22%,
     42% {
-        background: palevioletred;
+        background: var(--wrong-answer-check-1);
     }
 
     20%,
     40%,
     60% {
-        background: var(--background-gradient);
-        background: lightcoral;
+        background: var(--wrong-answer-check-2);
     }
     62%,
     100%{
-        background: red;
+        background: var(--danger);
     }
 }
 
@@ -179,7 +193,7 @@
 }
 
 .levelListItem.active {
-    background-color: var(--sky-blue);
+    background: var(--bg-yellow-linear);
 }
 
 .levelListItemNumber {
@@ -191,4 +205,13 @@
 .levelListItemContent {
     font-size: 20px;
     font-weight: 300;
+}
+
+.endText{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }

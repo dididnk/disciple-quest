@@ -25,11 +25,11 @@ export default function Trivia({
     setSelectedAnswer(a);
     setClassName("answer active");
 
-    delay(300, () =>
+    delay(3000, () =>
       setClassName(a.correct ? "answer correct" : "answer wrong")
     );
 
-    delay(600, () => {
+    delay(6000, () => {
       if (a.correct) {
         if (questionNumber < data.length) {
           setQuestionNumber((prev) => prev + 1);
@@ -37,13 +37,8 @@ export default function Trivia({
         } else {
           setStop(true);
         }
-      } else {
-        if (questionNumber < data.length) {
-          setQuestionNumber((prev) => prev + 1);
-          setSelectedAnswer(null);
-        } else {
-          setStop(true);
-        }
+      } else {        
+        setStop(true);
       }
     });
   };
