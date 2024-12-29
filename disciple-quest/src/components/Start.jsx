@@ -1,13 +1,24 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import "../styles/start.css";
+import useSound from "use-sound";
+import theme from "../assets/sounds/theme.mp3";
 
 export default function Start({ setUsername }) {
   const inputRef = useRef();
   const [errorMessage, setErrorMessage] = useState("");
+  const [playTheme, { stop }] = useSound(theme, { volume: 0.5 });
+
+  useEffect(() => {
+    playTheme();
+    return () => {
+      stop();
+    };
+  }, [playTheme, stop]);
 
   const handlerClick = () => {
     const trimmedValue = inputRef.current.value.trim();
     if (trimmedValue.length < 3) {
-      setErrorMessage("Le pseudo/pseudo doit contenir au moins 3 caractères.");
+      setErrorMessage("Veuillez entrer un prénom d'au moins 3 caractères svp");
     } else {
       setUsername(trimmedValue);
       setErrorMessage("");
@@ -15,17 +26,19 @@ export default function Start({ setUsername }) {
   };
 
   return (
-    <>
-      <div className="start">
-      <h3>Veuillez entrer votre pseudo</h3>
+    <div className="start-container">
+      <div className="start-content">
+        <span className="title">Quel est votre prénom ?</span>
         <input
-          placeholder="Entrez votre psudo/prénom"
-          className="startInput"
+          placeholder="Entrez votre prénom"
+          className="input-name"
           ref={inputRef}
         />
-        <button className="startButton" onClick={handlerClick}>Commencer</button>
+        <button className="btn-start" onClick={handlerClick}>
+          Commencer
+        </button>
         {errorMessage && <p className="error">{errorMessage}</p>}
       </div>
-    </>
+    </div>
   );
 }

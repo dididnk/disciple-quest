@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import play from "../assets/sounds/play.mp3";

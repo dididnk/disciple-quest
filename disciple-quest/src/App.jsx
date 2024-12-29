@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import "./app.css";
+import "./styles/app.css";
 import Trivia from "./components/Trivia";
 import { randomQuizQuestions, levels } from "./db/data-base";
 import Timer from "./components/Timer";
@@ -63,9 +63,7 @@ function App() {
           </div>
         </>
       ) : (
-        <div className="main main-start">
-          <Start setUsername={setUsername} />
-        </div>
+        <Start setUsername={setUsername} />
       )}
     </div>
   );
