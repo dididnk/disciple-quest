@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/trivia.css";
 import useSound from "use-sound";
 import play from "../assets/sounds/play.mp3";
 import correct from "../assets/sounds/correct.mp3";
@@ -44,18 +45,18 @@ export default function Trivia({
       if (a.correct) {
         if (questionNumber < data.length) {
           correctAnswer();
-          delay(1000, () =>{
-            setQuestionNumber((prev) => prev + 1)
-            setSelectedAnswer(null)
+          delay(1000, () => {
+            setQuestionNumber((prev) => prev + 1);
+            setSelectedAnswer(null);
           });
         } else {
-          delay(1000, () =>{
+          delay(1000, () => {
             setStop(true);
           });
         }
       } else {
         wrongAnswer();
-        delay(1000, () =>{
+        delay(1000, () => {
           setStop(true);
         });
       }
@@ -63,18 +64,20 @@ export default function Trivia({
   };
 
   return (
-    <div className="trivia">
-      <div className="question">{question?.question}</div>
-      <div className="answers">
-        {question?.answers?.map((a) => (
-          <div
-            key={a.text}
-            className={selectedAnswer === a ? className : "answer"}
-            onClick={() => handlerClick(a)}
-          >
-            {a.text}
-          </div>
-        ))}
+    <div className="trivia-container">
+      <div className="trivia-content">
+        <div className="question">{question?.question}</div>
+        <div className="answers">
+          {question?.answers?.map((a) => (
+            <div
+              key={a.text}
+              className={selectedAnswer === a ? className : "answer"}
+              onClick={() => handlerClick(a)}
+            >
+              {a.text}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

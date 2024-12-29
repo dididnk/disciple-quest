@@ -7,12 +7,11 @@ import Start from "./components/Start";
 
 function App() {
   const data = randomQuizQuestions;
-  const [username, setUsername] = useState("");
+  const levelList = useMemo(() => levels, []);
+  const [username, setUsername] = useState("Emmanuel");
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [yourLevel, setYourLevel] = useState(0);
-
-  const levelList = useMemo(() => levels, []);
 
   useEffect(() => {
     questionNumber > 1 &&
@@ -24,14 +23,26 @@ function App() {
       {username ? (
         <>
           <div className="main">
-          <h1>Bienvenue, {username}!</h1>
             {stop ? (
-              <h1 className="endText">Ton niveau actuel est {yourLevel}</h1>
+              <h1 className="endText">
+                {username}, Ton niveau actuel est {yourLevel}
+              </h1>
             ) : (
               <>
                 <div className="top">
-                  <div className="timer">
-                    <Timer setStop={setStop} questionNumber={questionNumber} />
+                  <h1 className="username">Bonjour, {username} !</h1>
+                  <div className="timer-box">
+                    <div className="timer-box-content">
+                      <div className="time-left">
+                        <span>Temps restant</span>
+                      </div>
+                      <div className="timer">
+                        <Timer
+                          setStop={setStop}
+                          questionNumber={questionNumber}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="bottom">

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const quizQuestions = [
   {
     id: 1,
@@ -61,18 +60,19 @@ function shuffleArray(array) {
 }
 
 export const levels = [
-  { id: 1, content: "✟ Niveau 1" },
-  { id: 2, content: "✟ Niveau 2" },
-  { id: 3, content: "✟ Niveau 3" },
-  { id: 4, content: "✟ Niveau 4" },
-  { id: 5, content: "✟ Niveau 5" },
-  { id: 6, content: "✟ Niveau 6" },
-  { id: 7, content: "✟ Niveau 7" },
-  { id: 8, content: "✟ Niveau 8" },
-  { id: 9, content: "✟ Niveau 9" },
-  { id: 10, content: "✟ Niveau 10" },
-  { id: 11, content: "✟ Niveau 11" },
-  { id: 12, content: "✟ Niveau 12" },
-].reverse();
+  { id: 12, content: "✟ Judas Iscariot (Traître)" },
+  { id: 11, content: "✟ Barthélemy" },
+  { id: 10, content: "✟ Thaddée" },
+  { id: 9, content: "✟ Simon le Zélote" },
+  { id: 8, content: "✟ Jacques, fils d'Alphée" },
+  { id: 7, content: "✟ Thomas" },
+  { id: 6, content: "✟ Philippe" },
+  { id: 5, content: "✟ André" },
+  { id: 4, content: "✟ Matthieu (Évangéliste)" },
+  { id: 3, content: "✟ Luc (Évangéliste)" },
+  { id: 2, content: "✟ Marc (Évangéliste)" },
+  { id: 1, content: "✟ Jean (Disciple bien-aimé)" },
+];
+
 
 export const randomQuizQuestions = shuffleArray([...quizQuestions]);
