@@ -8,7 +8,7 @@ import Start from "./components/Start";
 function App() {
   const data = randomQuizQuestions;
   const levelList = useMemo(() => levels, []);
-  const [username, setUsername] = useState("Emmanuel");
+  const [username, setUsername] = useState("");
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [yourLevel, setYourLevel] = useState(0);
@@ -57,6 +57,7 @@ function App() {
             )}
           </div>
           <div className="pyramid">
+            <h3>Votre niveau de connaissance de la Bible</h3>
             <ul className="levelList">
               {levelList.map((level) => (
                 <li
