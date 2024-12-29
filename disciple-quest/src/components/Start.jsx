@@ -18,10 +18,16 @@ export default function Start({ setUsername }) {
   const handlerClick = () => {
     const trimmedValue = inputRef.current.value.trim();
     if (trimmedValue.length < 3) {
-      setErrorMessage("Veuillez entrer un prénom d'au moins 3 caractères svp");
+      setErrorMessage("Veuillez entrer un prénom d'au moins 3 caractères svp.");
     } else {
       setUsername(trimmedValue);
       setErrorMessage("");
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handlerClick();
     }
   };
 
@@ -33,6 +39,7 @@ export default function Start({ setUsername }) {
           placeholder="Entrez votre prénom"
           className="input-name"
           ref={inputRef}
+          onKeyDown={handleKeyDown}
         />
         <button className="btn-start" onClick={handlerClick}>
           Commencer
