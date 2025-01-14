@@ -1,0 +1,114 @@
+@import url('main.css');
+
+.trivia-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.trivia-content{   
+    width: 90%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.question {
+    cursor: help;
+    width: 80%;
+    background: var(--bg-yellow-linear);
+    border: var(--border-level-1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.answers {
+    width: 100%;
+    height: 60%;
+    margin-bottom: 40px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.answer {
+    cursor: pointer;
+    width: 40%;
+    padding: 10px;
+    background: var(--bg-mixed-yellow-orange);
+    border: var(--border-level-1);
+    border-radius: 15px;
+    margin: 0 10px 20px 10px;
+}
+
+.answers:hover :not(.answer:hover) {
+    opacity: 0.5;
+}
+
+.answer:hover,
+.answer.active {
+    transform: scale(1.04);
+    background: var(--bg-yellow-linear);
+    font-weight: 500;
+}
+
+/* answer check animations */
+.answer.correct {
+    animation: correct 3s ease forwards;
+}
+
+@keyframes correct {
+
+    0%,
+    22%,
+    42% {
+        background: var(--coorect-answer-check-1);
+    }
+
+    20%,
+    40%,
+    60% {
+        background: var(--coorect-answer-check-2);
+    }
+
+    62%,
+    100% {
+        background: var(--success);
+    }
+}
+
+.answer.wrong {
+    animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+
+    0%,
+    22%,
+    42% {
+        background: var(--wrong-answer-check-1);
+    }
+
+    20%,
+    40%,
+    60% {
+        background: var(--wrong-answer-check-2);
+    }
+
+    62%,
+    100% {
+        background: var(--danger);
+    }
+}
