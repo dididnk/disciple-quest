@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import "./app.css";
 
 function App() {
-  const [username, setUsername] = useState("Emmanuel");
+  const [username, setUsername] = useState("");
 
   return (
     <div className="app">
