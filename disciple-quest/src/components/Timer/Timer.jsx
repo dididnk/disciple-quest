@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function Timer({ onTimeOut, resetTrigger }) {
-  const MAX_TIME = 10;
+  const MAX_TIME = 7;
   const [time, setTime] = useState(MAX_TIME);
 
   useEffect(() => {
