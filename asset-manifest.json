@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/disciple-quest/static/css/main.2e78b4db.css",
+    "main.js": "/disciple-quest/static/js/main.ecd31b83.js",
+    "static/js/885.e0b6b3ee.chunk.js": "/disciple-quest/static/js/885.e0b6b3ee.chunk.js",
+    "static/media/login-bg.png": "/disciple-quest/static/media/login-bg.8e3dca06175c64d62060.png",
+    "static/media/main-bg.png": "/disciple-quest/static/media/main-bg.2320f862d4d1435d2808.png",
+    "static/media/theme.mp3": "/disciple-quest/static/media/theme.eefa288e6408a2ded9f2.mp3",
+    "static/media/wrong.mp3": "/disciple-quest/static/media/wrong.44468bca5e37fde459f6.mp3",
+    "static/media/correct.mp3": "/disciple-quest/static/media/correct.ed3894f877249fd39ddf.mp3",
+    "index.html": "/disciple-quest/index.html",
+    "main.2e78b4db.css.map": "/disciple-quest/static/css/main.2e78b4db.css.map",
+    "main.ecd31b83.js.map": "/disciple-quest/static/js/main.ecd31b83.js.map",
+    "885.e0b6b3ee.chunk.js.map": "/disciple-quest/static/js/885.e0b6b3ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e78b4db.css",
+    "static/js/main.ecd31b83.js"
+  ]
+}
